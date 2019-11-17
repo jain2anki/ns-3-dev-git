@@ -4,11 +4,13 @@ def build(bld):
     obj = bld.create_ns3_module('csma-layout', ['csma', 'network', 'internet'])
     obj.source = [
         'model/csma-star-helper.cc',
+        'model/jellyfish-helper.cc',
         ]
     headers = bld(features='ns3header')
     headers.module = 'csma-layout'
     headers.source = [
         'model/csma-star-helper.h',
+        'model/jellyfish-helper.cc',
         ]
 
     if bld.env['ENABLE_EXAMPLES']:
